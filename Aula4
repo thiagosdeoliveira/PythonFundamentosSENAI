@@ -1,0 +1,57 @@
+
+#Função e chamadas de funções criadas com def
+
+def saudacao():
+    print('Olá, seja bem vindo!')
+    #chamadas são feitas pelo nome: saudacao()
+
+def soma(a,b):
+    return a + b
+resultado = soma(2,3)
+print(resultado) #5
+
+
+#Tuplas e, python, são semelhantes a lista, entretanto imutáveis () "parêteses"
+
+x = ('Ana',30)
+print(x [0])
+
+
+#Dicionário em Python, são estruturas com chave valor, usa chaves {}
+
+aluno = {'nome':'Calors','idade':25}
+print(aluno['nome'])
+
+
+
+#Crie uma função que receba um nome e imprima sua saudação! 
+
+def saudacao(nome):
+    print(f"Olá, {nome}! Seja bem-vindo(a)!")
+saudacao("Chico")
+
+def soma (a,b): 
+    return (a+b)/2
+resultado = soma(3,3)
+print(resultado)
+
+#Crie um dicionário com o nome, sobrenome e idade imprima os dados.
+
+aluno = {'nome':'Calors','sobrenome':'Silva', 'idade':25}
+print(aluno['nome']) and print(aluno['sobrenome']) and print(aluno['idade'])
+
+
+#crie um programa que peça dois numeros e exiba o maior. 
+
+a = int(input("Insira um numero de 0 ~ 10"))
+b = int(input("Insira um numero de 0 ~ 10"))
+
+if a >= b:
+    print(a)
+else:
+    print(b)
+
+
+a = int(input("Insira o 1o numero"))
+b = int(input("Insira o 2o numero"))
+print("Maior numero:",max(a,b))

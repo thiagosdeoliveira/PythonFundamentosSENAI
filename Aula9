@@ -1,0 +1,68 @@
+import tkinter as tk
+from tkinter import messagebox
+
+def formatar_cpf(cpf):
+    cpf = ''.join(filter(str.isdigit, cpf))
+    if len(cpf) != 11:
+        return None
+    return f"{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{cpf[9:11]}"
+
+def formatar_telefone(tel):
+    tel = ''.join(filter(str.isdigit, tel))
+    if len(tel) == 11:
+        return f"({tel[:2]}){tel[2:7]}-{tel[7:]}"
+    elif len(tel) == 10:
+        return f"({tel[:2]}){tel[2:6]}-{tel[6:]}"
+    else:
+        return None
+    
+def cadastrar():
+    nome = entry_nome.get().strip()
+    cpf_raw = entry_cpf.get().strip()
+    tel_raw = entry_telefone.get().strip()
+
+    cpf = formatar_cpf(cpf_raw)
+    telefone = formatar_telefone(tel_raw)
+
+    if not nome:
+        messagebox.showerror("ERRO","Nome é Obrigatorio.")
+        return
+    if not cpf:
+        messagebox.showerror("ERRO","CPF invalido. O CPF deve ter 11 números.")
+        return
+    if not telefone:
+        messagebox.showerror("ERRO","Telefone invalido. O telefone deve ter o DDD.")
+        return
+    
+    mgs = f"Cadastro Realizado!\n\nNome:{nome}\nCPF:{cpf}\nTelefone:{telefone}"
+    messagebox.showinfo("Sucesso",mgs)
+
+    #Limpa os campos após cadastro
+
+    entry_nome.delete(0, tk.END)
+    entry_cpf.delete(0, tk.END)
+    entry_telefone.delete(0, tk.END)
+
+    #Criar Janela 
+
+    root = tk.TK()
+    root.title("Cadastro Simples")
+
+    #1o Layot
+
+    tk.Label(root, text = "Nome:").grid(row=0, column=0, sticky="e")
+    entry_nome = tk.Entry(root, width=30)
+    entry_nome.grip(row=0, column=1, padx=5, pady=5)
+
+    tk.Label(root, text = "CPF (somente números):").grid(row=0, column=0, sticky="e")
+    entry_cpf = tk.Entry(root, width=30)
+    entry_cpf.grip(row=1, column=1, padx=5, pady=5)
+
+    tk.Label(root, text = "Telefone (somente números):").grid(row=0, column=0, sticky="e")
+    entry_telefone = tk.Entry(root, width=30)
+    entry_telefone.grip(row=2, column=1, padx=5, pady=5)
+
+    btn_cadastrar = tk.Button(root,text="Cadastrar", command = cadastrar)
+    btn_cadastrar.grid(row=3, column=0, columnspan=2, pady=10)
+
+    root.mainloop()

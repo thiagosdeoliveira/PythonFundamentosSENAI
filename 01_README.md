@@ -1,6 +1,8 @@
 #Python Fundamentos 
-Desenvolvimento de competências em programação utilizando a linguagem Python, com foco nos fundamentos essenciais da ferramenta. 
 
+
+Desenvolvimento de competências em programação utilizando a linguagem Python, com foco nos fundamentos essenciais da ferramenta. 
+Aqui listo todos os arquivos criados durantes o curso. 
 Ministrado pelo Prof. Danilo Bezerra na  Escola SENAI Theobaldo de Nigris.
 Entre os meses de abril e maio de 2025. 
 10 aulas sendo a 10ª Certificação CISCO. 

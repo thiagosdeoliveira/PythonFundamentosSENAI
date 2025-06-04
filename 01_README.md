@@ -1,4 +1,4 @@
-Python Fundamentos 
+#Python Fundamentos 
 Desenvolvimento de competências em programação utilizando a linguagem Python, com foco nos fundamentos essenciais da ferramenta. 
 
 Ministrado pelo Prof. Danilo Bezerra na  Escola SENAI Theobaldo de Nigris.

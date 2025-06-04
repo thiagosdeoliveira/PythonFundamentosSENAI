@@ -1,0 +1,31 @@
+nota = int(input("Insira sua nota"))
+freq = float(input("insira suas faltas"))
+freq1 = (freq/10)
+if nota >= 7 and freq1 >= 0.75:
+    print("Aprovado")
+else:
+    print("Reprovado")
+
+
+qvc = 150
+qvp = 130
+puc = 1.5
+pup = 1.5
+custo = 2500
+
+
+#A
+Fatura_Pepsi = (qvp*pup)
+print(Fatura_Pepsi)
+
+#B
+Fatura_Coca = (qvc*puc)
+print(Fatura_Coca)
+fatura_total = (Fatura_Pepsi+Fatura_Coca)
+
+#C
+Lucro = (custo-fatura_total)
+print(Lucro)
+#D
+Margem = ((Lucro/fatura_total)*100)
+print(Margem)

@@ -1,0 +1,89 @@
+
+#Verificando aparovação
+
+nota = 6
+if nota >= 7:
+    print("Aprovado")
+else:
+    print("Reprovado")
+
+# if alinhado
+
+nota = 6
+if nota >= 7:
+    print("Aprovado")
+else:
+ if nota >=5:
+    print("Recuperação")
+ else:
+    print("Reprovado")
+
+
+# uso  de ELIF
+
+vendas = 30000
+meta = 200000
+
+if vendas >= meta:
+    print("Ating")
+elif vendas >= (meta/2):
+    print("Acima de 50%")
+else:
+    print("Ñ Ating")
+
+
+# Uso do AND
+vendas_funcionario = 2500
+meta_funcionario = 20000
+vendas_loja = 15000
+meta_loja = 20000
+
+if vendas_funcionario > meta_funcionario and vendas_loja >meta_loja:
+    print("Bonus liberado")
+else:
+    print("Sem bonus")
+
+# OR lógico
+
+idade = 17
+autorizacao_pai = True
+
+if idade >= 18 or autorizacao_pai:
+    print("Entrada permitida")
+else: 
+    print("Entrada negada")
+
+# Comparador "in"
+
+email = 'joao@gmail.com'
+
+if "@" in email:
+    print("Email válido")
+else:
+    print("Email invalido")    
+
+# Comparação Vazia
+
+faturamento = ""
+custo = ""
+
+if faturamento and custo:
+    lucro = int(faturamento)-int(custo)
+    print("Lucro:",lucro)
+else:
+    print("Dados Incompletos")
+
+# Lista de Compras
+# Pesça 5 produtos ao usuário e armazene em uma lista, depois imprima um por linha
+
+
+produtos = []
+print("Digite 5 produtos para lista de compras:")
+
+for i in range(5):
+    item = input(f"Produto {i+1}: ")
+    produtos.append(item)
+
+print("\nLista de Compras:")
+for produto in produtos:
+    print(f" - {produto}")

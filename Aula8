@@ -1,0 +1,184 @@
+#Descobrir erro do codigo abaixo: 
+'''
+def calcular_situacao():
+    try:
+        nome = input("Nome do Aluno: ")
+        nota1 = float(input(Nota 1 (0-10): ))
+        nota2 = float(input(Nota 2 (0-10): ))
+        nota3 = float(input(Nota 3 (0-10): ))
+
+        # Verificação das faixas permitidas (0 a 10)
+        if not all(0 <= nota <= 10 for nota in [nota1, nota2, nota3])
+            print("Erro: notas devem estar entre 0 e 10.")
+            return
+
+        media = (nota1 + nota2 + nota3) / 3
+
+        if media >= 7.0;
+            situacao = "Aprovado"
+        elif media >= 5.0:
+            situacao = "Recuperação"
+        else:
+            situacao = "Reprovado"
+
+        print("\nAluno: {nome}")
+        print("Média: {media:.2f}")
+        print("Situação: {situacao}")
+
+    except ValueError:
+        print("Por favor, insira notas válidas (números)")
+
+'''
+
+# Executar função
+
+
+# Solução 
+
+def calcular_situacao():
+    try:
+        nome = input("Nome do Aluno: ")
+        nota1 = float(input("Nota 1 (0-10): "))
+        nota2 = float(input("Nota 2 (0-10): "))
+        nota3 = float(input("Nota 3 (0-10): "))
+
+        # Verificação das faixas permitidas (0 a 10)
+        if not all(0 <= nota <= 10 for nota in [nota1, nota2, nota3]):
+            print("Erro: notas devem estar entre 0 e 10.")
+            return
+
+        media = (nota1 + nota2 + nota3) / 3
+
+        if media >= 7.0:
+            situacao = "Aprovado"
+        elif media >= 5.0:
+            situacao = "Recuperação"
+        else:
+            situacao = "Reprovado"
+
+        print(f"\nAluno:{nome}")
+        print(f"Média: {media:.2f}")
+        print(f"Situação: {situacao}")
+
+    except ValueError:
+        print("Por favor, insira notas válidas (números)")
+
+# Executar função
+calcular_situacao()
+
+import tkinter as tk
+
+# Solução 
+
+def calcular_situacao():
+    try:
+        nome = input("Nome do Aluno: ")
+        nota1 = float(input("Nota 1 (0-10): "))
+        nota2 = float(input("Nota 2 (0-10): "))
+        nota3 = float(input("Nota 3 (0-10): "))
+
+        # Verificação das faixas permitidas (0 a 10)
+        if not all(0 <= nota <= 10 for nota in [nota1, nota2, nota3]):
+            print("Erro: notas devem estar entre 0 e 10.")
+            return
+
+        media = (nota1 + nota2 + nota3) / 3
+
+        if media >= 7.0:
+            situacao = "Aprovado"
+            cor = "green"
+        elif media >= 5.0:
+            situacao = "Recuperação"
+            cor = "yellow"
+        else:
+            situacao = "Reprovado"
+            cor = "red"
+
+        print(f"\nAluno:{nome}")
+        print(f"Média: {media:.2f}")
+        print(f"Situação: {situacao}")
+
+    except ValueError:
+        print("Por favor, insira notas válidas (números)")
+
+
+
+# Executar função
+calcular_situacao()
+
+
+# TRY
+    # Código que pode gerar um erro (exceção)
+    # Ex: divisão por zero, acesso a um índice inexistente de lista,
+    # conversão de texto para número que não é possível, etc.
+# EXCEPT Tipo De Erro:
+    # Código que será executado SE o 'TipoDeErro' ocorrer no bloco 'try'
+    # Aqui você pode:
+    # - Imprimir uma mensagem de erro amigável para o usuário
+    # - Registrar o erro em um arquivo de log
+    # - Tentar uma alternativa para a operação que falhou
+    # - Ignorar o erro (cuidado ao fazer isso!)
+
+
+import tkinter as tk
+
+def calcular_situacao():
+    try:
+        nome = entrada_nome.get()
+        nota1 = float(entrada_nota1.get())
+        nota2 = float(entrada_nota2.get())
+        nota3 = float(entrada_nota3.get())
+
+        #Verificação das faixas permitidas (0 a 10)
+        if not all(0 <= nota <= 10 for nota in [nota1, nota2, nota3]):
+            resultado.config(text="Erro: notas devem estar entre 0 e 10.", fg="red")
+            return
+
+        media = (nota1 + nota2 + nota3) / 3
+
+        if media >= 7.0:
+            situacao = "Aprovado"
+            cor = "green"
+        elif media >= 5.0:
+            situacao = "Recuperação"
+            cor = "orange"
+        else:
+            situacao = "Reprovado"
+            cor = "red"
+
+        resultado.config(
+            text=f"Aluno: {nome}\nMédia: {media:.2f}\nSituação: {situacao}",
+            fg=cor
+        )
+    except ValueError:
+        resultado.config(text="Por favor, insira notas válidas (números).", fg="red")
+
+#Criar janela
+janela = tk.Tk()
+janela.title("Notas do Aluno")
+janela.geometry("350x320")
+janela.configure(bg="#f0f0f0")
+
+#Campos
+tk.Label(janela, text="Nome do Aluno:", bg="#f0f0f0").pack()
+entrada_nome = tk.Entry(janela)
+entrada_nome.pack()
+
+tk.Label(janela, text="Nota 1 (0-10):", bg="#f0f0f0").pack()
+entrada_nota1 = tk.Entry(janela)
+entrada_nota1.pack()
+
+tk.Label(janela, text="Nota 2 (0-10):", bg="#f0f0f0").pack()
+entrada_nota2 = tk.Entry(janela)
+entrada_nota2.pack()
+
+tk.Label(janela, text="Nota 3 (0-10):", bg="#f0f0f0").pack()
+entrada_nota3 = tk.Entry(janela)
+entrada_nota3.pack()
+
+tk.Button(janela, text="Calcular Situação", command=calcular_situacao).pack(pady=10)
+
+resultado = tk.Label(janela, text="", font=("Arial", 12), bg="#f0f0f0")
+resultado.pack()
+
+janela.mainloop()
